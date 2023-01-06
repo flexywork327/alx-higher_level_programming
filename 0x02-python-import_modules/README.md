@@ -1,3 +1,3 @@
-## 0x02-python-import_modules
+##Python - import & modules
 
-0x02-python-import_modules project:
+0x02- Python Project
