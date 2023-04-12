@@ -3,4 +3,3 @@
 // using console.log
 
 console.log('JavaScript is amazing');
-
