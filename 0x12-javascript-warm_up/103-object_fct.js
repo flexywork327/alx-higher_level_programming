@@ -1,21 +1,17 @@
 #!/usr/bin/node
-class MyObject {
-  constructor(type, value) {
-    this.type = type;
-    this.value = value;
-  }
-
-  incr() {
-    this.value++;
-  }
-}
-
-const myObject = new MyObject('object', 12);
+const myObject = {
+  type: 'object',
+  value: 12
+};
 console.log(myObject);
+
+myObject.incr = function () {
+  this.value++;
+};
+
 myObject.incr();
 console.log(myObject);
 myObject.incr();
 console.log(myObject);
 myObject.incr();
 console.log(myObject);
-
