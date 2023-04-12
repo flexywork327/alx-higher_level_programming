@@ -1,14 +1,12 @@
 #!/usr/bin/node
 
-//  Write a script that prints x times “C is fun”
-//  Where x is the first argument of the script
-//  If the first argument can’t be converted to an integer, print “Missing number of occurrences”
-//  You can use only two console.log to print all output
+const argNoPath = process.argv.slice(2);
+const num = Number(argNoPath[0]);
 
-const x = parseInt(process.argv[2]);
-if (isNaN(x)) {
+if (Number.isNaN(num)) {
   console.log('Missing number of occurrences');
-}
-for (let i = 0; i < x; i++) {
-  console.log('C is fun');
+} else {
+  for (let i = 0; i < num; i++) {
+    console.log('C is fun');
+  }
 }

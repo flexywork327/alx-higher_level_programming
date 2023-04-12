@@ -1,16 +1,12 @@
 #!/usr/bin/node
 
-//  Write a script that prints a square
-//  The first argument is the size of the square
-//  If the first argument can’t be converted to an integer, print “Missing size”
-//  You must use the character X to print the square
-//  You must use console.log(...) to print all output
+const argNoPath = process.argv.slice(2);
+const num = Number(argNoPath[0]);
 
-const square = Number(process.argv[2]);
-
-if (isNaN(square)) {
+if (Number.isNaN(num)) {
   console.log('Missing size');
-}
-for (let i = 0; i < square; i++) {
-  console.log('X'.repeat(square));
+} else {
+  for (let i = 0; i < num; i++) {
+    console.log('X'.repeat(num));
+  }
 }

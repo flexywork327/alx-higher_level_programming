@@ -1,14 +1,9 @@
 #!/usr/bin/node
 
-// a script that prints two arguments passed to it, in the following format: is
+const argL = process.argv.slice(2);
+const argA = argL[0];
+const argB = argL[1];
 
-const arg1 = process.argv[2];
-const arg2 = process.argv[3];
+const argConcat = argA + ' is ' + argB;
 
-if (arg1 && arg2 === undefined) {
-  console.log(`${arg1} is ${arg2}`);
-} else if (arg1 || arg2 === undefined) {
-  console.log(`${arg1} is ${arg2}`);
-} else {
-  console.log(`${arg1} is ${arg2}`);
-}
+console.log(argConcat);

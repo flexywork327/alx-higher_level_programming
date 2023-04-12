@@ -1,13 +1,8 @@
 #!/usr/bin/node
 
-// a script that prints the first argument passed to it
-// If no arguments are passed to the script, print “No argument”
-// You must use console.log(...) to print all output
-
-const arg = process.argv[2];
-
-if (arg === undefined) {
+const argNoPath = process.argv.slice(2);
+if (argNoPath[0] == null) {
   console.log('No argument');
 } else {
-  console.log(`${arg}`);
+  console.log(argNoPath[0]);
 }

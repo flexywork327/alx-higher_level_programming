@@ -1,10 +1,9 @@
 #!/usr/bin/node
 
-//  a script that prints My number: <first argument converted in integer>
-
-const arg1 = parseInt(process.argv[2]);
-if (arg1) {
-  console.log(`My number: ${arg1}`);
-} else {
+const argNoPath = process.argv.slice(2);
+const num = Number(argNoPath[0]);
+if (Number.isNaN(num)) {
   console.log('Not a number');
+} else {
+  console.log(`My number: ${num}`);
 }

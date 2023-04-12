@@ -1,24 +1,30 @@
 #!/usr/bin/node
 
-//  Write a script that searches the second biggest integer in the list of arguments.
-//  You can assume all arguments can be converted to integer
-//  If no argument passed, print 0
-//  If the number of arguments is 1, print 0
-//  You must use console.log(...) to print all output
-
-function second (arg) {
-  const max = Math.max(...arg);
-  let min = Math.min(...arg);
-  for (const i of arg) {
-    if (i > min && i < max) {
-      min = i;
-    }
-  }
-  return min;
-}
-const args = process.argv.slice(2);
-if (args.length === 0 || args.length === 1) {
+const argS = process.argv.slice(2);
+if (argS.length < 2) {
   console.log(0);
 } else {
-  console.log(second(args));
+  for (let i = 0; i < argS.length; i++) argS[i] = Number(argS[i]);
+
+  let biggest;
+  let secBiggest;
+
+  if (argS[0] >= argS[1]) {
+    biggest = argS[0];
+    secBiggest = argS[1];
+  } else {
+    biggest = argS[1];
+    secBiggest = argS[0];
+  }
+
+  for (let i = 2; i < argS.length; i++) {
+    if (argS[i] > biggest) {
+      secBiggest = biggest;
+      biggest = argS[i];
+    } else if (argS[i] > secBiggest && argS[i] < biggest) {
+      secBiggest = argS[i];
+    }
+  }
+
+  console.log(secBiggest);
 }
