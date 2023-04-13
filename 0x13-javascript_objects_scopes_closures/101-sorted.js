@@ -13,5 +13,4 @@ for (const id in dict) {
   // push the old dict key as value to the list value of the occurrence key in the new key
   userByOccurrences[occurrences].push(id);
 }
-
 console.log(userByOccurrences);
