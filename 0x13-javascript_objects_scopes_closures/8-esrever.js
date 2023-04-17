@@ -1,8 +1,10 @@
 #!/usr/bin/node
 
 exports.esrever = function (list) {
-  return list.reduceRight(function (array, current) {
-    array.push(current);
-    return array;
-  }, []);
+  const revList = [];
+  for (const member of list) {
+    revList.unshift(member);
+  }
+
+  return revList;
 };
